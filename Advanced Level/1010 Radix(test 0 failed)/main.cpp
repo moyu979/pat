@@ -35,18 +35,22 @@ int main2() {
         radix = radix - 'a' + 10;
     }*/
 
-    
-
     long long int nn1 = 0;
 
     if (tag == 2) {
         n1.swap(n2);
     }
     if (n1 == n2) {
-
+        
         if (n1.length() == 1) {
             long long int t = getD(n1, 40) + 1;
-            cout << (t > 2 ? t : 2);
+            if (radix == 1) {
+                cout << 1;
+            }
+            else {
+                cout << (t > 2 ? t : 2);
+            }
+            
             return 0;
         }
         else {
@@ -60,7 +64,7 @@ int main2() {
     }
     nn1 = getD(n1, radix);
 
-    long long int start = 0, end = nn1;
+    long long int start = 0, end = nn1+1;
     int t;
     for (int i = 0; i < n2.length(); i++) {
         
